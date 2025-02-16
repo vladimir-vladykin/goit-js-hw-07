@@ -1,3 +1,13 @@
+const body = document.querySelector("body");
+const colorOutput = document.querySelector(".color");
+const changeColorButton = document.querySelector(".change-color");
+
+changeColorButton.addEventListener("click", (event) => {
+  const newHexColor = getRandomHexColor();
+  colorOutput.textContent = newHexColor;
+  body.style.backgroundColor = newHexColor;
+});
+
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
